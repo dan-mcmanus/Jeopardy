@@ -3,7 +3,6 @@ const api = require('../api/clues');
 const _ = require('lodash');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', (req, res, next) => {
   const boardData = api.boardData;
   let categories = [];
