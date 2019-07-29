@@ -4,13 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var HandleBars = require('handlebars');
+var exphbs = require('express-handlebars');
+var helpers = require('./helpers/helpers');
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
 
 var app = express();
 
 // view engine setup
+
+exphbs.create({
+  helpers: helpers
+});
+app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

@@ -6,6 +6,7 @@
     <div class="card-group panel-row categories-row">
         {{#each categories}}
         <div class="card board-panel">
+            
             <div class="card-body">
                 <div class="category-title">{{this}}</div>
                 <p class="card-text"></p>
@@ -18,13 +19,14 @@
 {{!-- $100 / $200 --}}
     <div class="card-group panel-row panel1">
         {{#each row1}}
-        <div class="card board-panel">
+        <div class="card board-panel" onclick="viewQuestion('{{this.question}}', '{{this.answer}}')">
             <div class="card-body">
                 <div class="card-title">${{this.value}}</div>
                 <p class="card-text"></p>
             </div>
         </div>
         {{/each}}
+
     </div>
 
 {{!-- $200 / $400 --}}
@@ -38,7 +40,7 @@
         </div>
         {{/each}}
     </div>
-    
+
 {{!-- $300 / $600 --}}
     <div class="card-group panel-row panel3">
         {{#each row3}}
@@ -77,16 +79,27 @@
 
 </div>
 
-{{#each clues}}
-<div id="question_{{@index}}">{{this.question}}</div>
-<button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#revealAnswer_{{@index}}">
-    Show Answer
-</button>
+<div class="modal fade" id="selectQuestion" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-4" id="result">
+                <div class="row question-row">
+                    <div class="modal-text" id="questionText"></div>
+                </div>
 
-<div class="collapse" id="revealAnswer_{{@index}}">
-    <div class="card card-body answer-card">
-        {{this.answer}}
+
+            <div class="row answer-row">
+                <div class="modal-text" id="answerText"></div>
+            </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+        </div>
     </div>
 </div>
-{{/each}}
-</div>
+
+<script>
+    function viewQuestion (question, answer) {
+        $('#selectQuestion').modal();
+        $('#questionText')[0].innerText = question;
+        $('#answerText')[0].innerText = answer;
+    }
+</script>

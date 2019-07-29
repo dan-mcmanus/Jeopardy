@@ -46,3 +46,32 @@ div.card.categories-row {
   color: white;
   vertical-align: middle;
 }
+
+.modal-full {
+  min-width: 90vw;
+  margin: 2.5 5vw;
+}
+
+.modal {
+  background: #007bff;
+}
+
+.modal-full .modal-content {
+  min-height: 90vh;
+  font-size: 35pt;
+  font-weight: 400;
+  text-align: center;
+}
+
+#result {
+  height: 100%;
+}
+
+.question-row {
+  height: 25rem;
+}
+
+.answer-row {
+  height: 10rem;
+  text-align: center;
+}
