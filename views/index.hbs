@@ -1,0 +1,87 @@
+<nav class="navbar logo-nav">
+</nav>
+
+<div class="jeopardy-board">
+{{!-- CATEGORIES --}}
+    <div class="card-group panel-row categories-row">
+        {{#each categories}}
+        <div class="card board-panel">
+            <div class="card-body">
+                <div class="category-title">{{this}}</div>
+                <p class="card-text"></p>
+            </div>
+
+        </div>
+        {{/each}}
+    </div>
+{{!-- $100 / $200 --}}
+    <div class="card-group panel-row panel1">
+        {{#each row1}}
+        <div class="card board-panel">
+            <div class="card-body">
+                <div class="card-title">${{this.value}}</div>
+                <p class="card-text"></p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+{{!-- $200 / $400 --}}
+    <div class="card-group panel-row panel2">
+        {{#each row2}}
+        <div class="card board-panel">
+            <div class="card-body">
+                <div class="card-title">${{this.value}}</div>
+                <p class="card-text"></p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+{{!-- $300 / $600 --}}
+    <div class="card-group panel-row panel3">
+        {{#each row3}}
+        <div class="card board-panel">
+            <div class="card-body">
+                <div class="card-title">${{this.value}}</div>
+                <p class="card-text"></p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+{{!-- $400 / $800 --}}
+    <div class="card-group panel-row panel4">
+        {{#each row4}}
+        <div class="card board-panel">
+            <div class="card-body">
+                <div class="card-title">${{this.value}}</div>
+                <p class="card-text"></p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+{{!-- $500 / $1000 --}}
+    <div class="card-group panel-row panel5">
+        {{#each row5}}
+        <div class="card board-panel">
+            <div class="card-body">
+                <div class="card-title">${{this.value}}</div>
+                <p class="card-text"></p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+
+{{#each clues}}
+<div id="question_{{@index}}">{{this.question}}</div>
+<button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#revealAnswer_{{@index}}">
+    Show Answer
+</button>
+
+<div class="collapse" id="revealAnswer_{{@index}}">
+    <div class="card card-body answer-card">
+        {{this.answer}}
+    </div>
+</div>
+{{/each}}
+</div>

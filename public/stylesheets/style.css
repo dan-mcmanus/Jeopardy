@@ -1,0 +1,48 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0.5rem;
+}
+
+
+.logo-nav {
+  background: #0e0e0e;
+  background-image: url(../images/logo-no-tagline.png);
+  background-repeat: no-repeat;
+  padding-top:5.75rem;
+  background-position: center;
+  background-blend-mode: hard-light;
+}
+
+.jeopardy-board {
+  height: 100vh;
+}
+
+div.card.board-panel {
+  background: blue;
+  height: 6.375rem;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+
+}
+
+div.card-body {
+  color: goldenrod;
+  font-size: 3.5rem;
+  font-weight: bolder;
+  text-align: center;
+  vertical-align: middle;
+}
+div.card.categories-row {
+  height: 5rem;
+}
+
+.answer-card {
+  margin: 1rem 0;
+  background: #00B7FF
+}
+
+.category-title {
+  font-size: 1.5rem;
+  color: white;
+  vertical-align: middle;
+}
